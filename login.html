@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: AirePro;
+            src: url(fonts/AireBoldPro.ttf);
+        }
+        @keyframes changing {
+            0% {
+                background-image: url(images/Group\ 63.svg);
+            }
+            25% {
+                background-image: url(images/Group\ 66.svg);
+            }
+            50% {
+                background-image: url(images/Group\ 64.svg);
+            }
+            75% {
+                background-image: url(images/Group\ 67.svg);
+            }
+        }
+        @keyframes colordeviz {
+            0% {
+                color: #ffffff;
+            }
+            25% {
+                color: #ffffff;
+            }
+            50% {
+                color: #404040;
+            }
+            75% {
+                color: #ffffff;
+            }
+        }
+        @keyframes movein {
+            from {
+                transform: translateY(80vh);
+              }
+              to {
+                transform: translateY(0vh);
+              }
+            
+        }
+        
+
+        body{
+            background-color: #444444;
+            overflow: hidden;
+            margin: 0px;
+            
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background-image: url(images/Group\ 63.svg);
+            background-repeat: no-repeat;
+            background-size: 101%;
+            animation: changing 20s infinite running;
+        }
+        .elements{
+            margin-left: 0px;
+            width: 100%;
+        }
+        .logo{
+            z-index: 2;
+            position: relative;
+            margin-top: 4vh;
+            font-size: 28vw;
+            text-align: center;
+            color: #ffffff;
+            font-family: "AirePro";
+            animation: colordeviz 20s infinite running;
+        }
+        .deviz{
+            padding: 2vh;
+            z-index: 999;
+            margin-top: 32vh;
+            text-align: center;
+            color: #ffffff;
+            font-size: 3vh;
+            font-weight: 300;
+            font-family: "Montserrat";
+        }
+        .plate{
+            z-index: 2;
+            margin-top: -1vh;
+            width: 100%;
+            height: 77vh;
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 4.5vh 4.5vh 0vh 0vh;
+            backdrop-filter: blur(4px);
+
+            animation: movein 0.65s  running;
+        }
+        input{
+            background-color: #ffffff00;
+            border: none;
+            border-radius: 4.5vh;
+            font-size: 3vh;
+            font-family: "Montserrat";
+            font-weight: 300;
+            color: #67645E;
+            width: 74vw;
+        }
+        input::placeholder{
+            padding-left: 2.7vw;
+        }
+        .input1{
+
+            position: absolute;
+            z-index: 999;
+            margin-top: 12.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        :focus {outline:none;}
+        
+
+        .input2{
+            position: absolute;
+            z-index: 999;
+            margin-top: 19.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .login{
+            position: absolute;
+            z-index: 999;
+            margin-top: 26.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .recovery{
+            text-decoration: none;
+            position: absolute;
+            z-index: 999;
+            margin-top: 31.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 2vh;
+            font-weight: 350;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+        }
+        .alternative{
+            position: absolute;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 36.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 2,5vh;
+            font-weight: 300;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .line {
+            width: 25vw;
+            height: 0.05vh;
+            background-color: #67645E;
+        }
+        .VK{
+            position: absolute;
+            z-index: 999;
+            margin-top: 44vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        
+    </style>
+    
+</head>
+
+<body>
+    <div class="elements">
+        <div class="logo">Insight</div>
+    </div> 
+
+    <div class="plate">
+        <!-- Поля ввода -->
+        <div class="input1">
+            <input type="text" id="name" name="name" placeholder="Логин"/>
+        </div>
+        <div class="input2">
+            <input type="password" id="name" name="name"  placeholder="Пароль" />
+        </div>
+        <!-- Кнопка входа по данным из полей -->
+        <div class="login" onclick="location.href='#'">
+            <a >Войти</a>
+        </div>
+        <!-- кнопка перехода на страницу восстановления пароля -->
+        <div class="recovery">
+            <a href="#" style="text-decoration: none; color: inherit">Забыли пароль?</a>
+        </div>
+        <!-- тут полосочки красивые не трогать)))))) -->
+        <div class="alternative">
+                <div class="line"></div>
+                <a style="padding: 0 10px;">ИЛИ</a>
+                <div class="line"></div>
+        </div>
+
+        <!-- Авторизация через ВК -->
+        <div class="VK" onclick="location.href='#'">
+            <a>Войти через VK</a>
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+document.addEventListener('livewire:init', () => {
+    let btnRegister = document.getElementById('button_reg');
+    let btnLogin = document.getElementById('button_in');
+    let btnHidePlate = document.getElementById('button_hide_plate');
+    let plates = new Map();
+
+    Livewire.on('open-form', (event) => {
+        let formName = event.formName;
+        let url = new URL(window.location.href);
+        url.searchParams.set('formName', formName);
+        history.pushState({formName: formName}, null, url.search);
+        openForm(formName);
+    });
+
+    Livewire.on('hide-form', (event) => {
+        history.pushState({formName: null}, null, `?formName=`);
+        setTimeout(() => {
+            hidePlate();
+        }, 400);
+    });
+
+    btnHidePlate.addEventListener('click', () => {
+        Livewire.dispatch('hide-form');
+    });
+
+    window.addEventListener('popstate', function(event) {
+        openForm(event?.state?.formName);
+    });
+});
+
+btnRegister = document.getElementById('button_reg');
+btnLogin = document.getElementById('button_in');
+btnHidePlate = document.getElementById('button_hide_plate');
+plates = new Map();
+function openForm(formName) {
+    let allForms = document.getElementById('allForms').children;
+    for (let i = 0; i < allForms.length; i++) {
+        const childElement = allForms[i];
+        if(childElement.id === formName) {
+            childElement.style.display = 'block'
+        } else {
+            childElement.style.display = 'none'
+        }
+    }
+    if (formName) {
+        openPlate()
+    }else {
+        hidePlate();}}
+function openPlate() {
+    btnRegister.style.display = 'none';
+    deviz.style.display = 'none';
+    btnLogin.style.display = 'none';
+    plate.style.display = 'block';}
+function hidePlate() {
+    btnRegister.style.display = 'block';
+    deviz.style.display = 'block';
+    btnLogin.style.display = 'block';
+    plate.style.height = 0;
+    setTimeout(() => {
+        plate.style.height = null;
+        plate.style.display = 'none';
+    }, 650);}
+function openFormByUrl() {
+    let formName;
+    let urlParams = new URLSearchParams(window.location.search);
+    formName = urlParams.get('formName');
+    openForm(formName);}
+</script>
+</html>

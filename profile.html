@@ -1,0 +1,123 @@
+<?php
+
+use App\Livewire\Actions\Logout;
+use Livewire\Volt\Component;
+use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\Auth;
+use App\Services\ClientBalanceService;
+use App\Services\BookingService;
+use App\Models\User;
+
+new #[Layout('layouts.client.app')] class extends Component {
+    public User $user;
+    public bool $existPassword = false;
+    public int $booking_history = 0;
+    public int $booking_active = 0;
+
+    public function mount(): void
+    {
+        $this->user = Auth::user();
+        $this->existPassword = $this->user?->password ? true : false;
+        $this->booking_history = BookingService::countHistoryBookingRecords(user: $this->user);
+        $this->booking_active = BookingService::countActiveBookingRecords(user: $this->user);
+    }
+
+    public function logout(Logout $logout): void
+    {
+        $logout();
+
+        $this->redirect('/');
+    }
+}; ?>
+
+<div>
+    <div class="balance-wrapper">
+        <livewire:client.layout.balance />
+    </div>
+
+    <div class="profile_content">
+        <div class="profile-photo">
+            <img src="{{
+                $user->avatar
+                ? str_contains($user->avatar, "http") ? $user->avatar : asset("storage/$user->avatar")
+                : Vite::asset('resources/images/no-photo/user.png')
+                }}" />
+        </div>
+
+        <div class="profile-name">{{ $user->name }}</div>
+        <a class="btn profile-edit-btn" href="{{ route('client.profile.edit') }}" wire:navigate>
+            Редактировать профиль
+        </a>
+
+        <div class="profile-booking-blocks">
+            <div>
+                История бронирования
+                <a href="{{ route('client.booking', parameters: ['history' => true]) }}" wire:navigate>
+                    {{ $booking_history }} занятий
+                </a>
+            </div>
+            <div>
+                Ближайшие бронирования
+                <a href="{{ route('client.booking', parameters: ['history' => true]) }}" wire:navigate>
+                    {{ $booking_active }} занятий
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-options">
+            <div class="profile-option option-city">
+                <div class="option-icon-name">
+                    <img class="option-icon" src="{{ Vite::asset('resources/images/profile/map.png') }}">
+                    <div class="option-name">Ваш город</div>
+                </div>
+                <div class="option-value-arrow">
+                    <div class="option-value">{{ $user->city?->name }}</div>
+                    <img class="option-arrow" src="{{ Vite::asset('resources/images/profile/arrow-left.svg') }}">
+                </div>
+            </div>
+            <div class="profile-option">
+                <div class="option-icon-name">
+                    <img class="option-icon" src="">
+                    <div class="option-name">FAQ</div>
+                </div>
+                <div class="option-value-arrow">
+                    <div class="option-value"></div>
+                    <img class="option-arrow" src="{{ Vite::asset('resources/images/profile/arrow-left.svg') }}">
+                </div>
+            </div>
+            <div class="profile-option" wire:click="logout">
+                <div class="option-icon-name">
+                    <img class="option-icon" src="">
+                    <div class="option-name">Выйти из аккаунта</div>
+                </div>
+                <div class="option-value-arrow">
+                    <div class="option-value"></div>
+                    <img class="option-arrow" src="{{ Vite::asset('resources/images/profile/arrow-left.svg') }}">
+                </div>
+            </div>
+        </div>
+
+        @for($i = 0; $i < 7; $i++)
+            <br>
+        @endfor
+    </div>
+
+    <livewire:client.components.profile.modal-edit-city modalPrefix="city" :$user/>
+</div>
+
+
+@script
+<script>
+    let optionCity = document.querySelector('.option-city');
+    optionCity.addEventListener('click', function (event) {
+        let city = event.currentTarget.querySelector('.option-value').innerText;
+        Livewire.dispatch('modal-form-open_city', { city:  city });
+    });
+
+    Livewire.on(`modal-close`, (data) => {
+        if (data.update) {
+            $wire.$refresh();
+        }
+    });
+</script>
+@endscript

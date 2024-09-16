@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: AirePro;
+            src: url(fonts/AireBoldPro.ttf);
+        }
+        @keyframes changing {
+            0% {
+                background-image: url(images/Group\ 63.svg);
+            }
+            25% {
+                background-image: url(images/Group\ 66.svg);
+            }
+            50% {
+                background-image: url(images/Group\ 64.svg);
+            }
+            75% {
+                background-image: url(images/Group\ 67.svg);
+            }
+        }
+        @keyframes colordeviz {
+            0% {
+                color: #ffffff;
+            }
+            25% {
+                color: #ffffff;
+            }
+            50% {
+                color: #404040;
+            }
+            75% {
+                color: #ffffff;
+            }
+        }
+        @keyframes movein {
+            from {
+                transform: translateY(80vh);
+              }
+              to {
+                transform: translateY(0vh);
+              }
+            
+        }
+        
+
+        body{
+            background-color: #444444;
+            overflow: hidden;
+            margin: 0px;
+            
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background-image: url(images/Group\ 63.svg);
+            background-repeat: no-repeat;
+            background-size: 101%;
+            animation: changing 20s infinite running;
+        }
+        .elements{
+            margin-left: 0px;
+            width: 100%;
+        }
+        .logo{
+            z-index: 2;
+            position: relative;
+            margin-top: 4vh;
+            font-size: 28vw;
+            text-align: center;
+            color: #ffffff;
+            font-family: "AirePro";
+            animation: colordeviz 20s infinite running;
+        }
+        .deviz{
+            padding: 2vh;
+            z-index: 999;
+            margin-top: 32vh;
+            text-align: center;
+            color: #ffffff;
+            font-size: 3vh;
+            font-weight: 300;
+            font-family: "Montserrat";
+        }
+        .plate{
+            z-index: 2;
+            margin-top: -1vh;
+            width: 100%;
+            height: 77vh;
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 4.5vh 4.5vh 0vh 0vh;
+            backdrop-filter: blur(4px);
+
+            animation: movein 0.65s  running;
+        }
+        
+        .input1{
+            position: absolute;
+            z-index: 999;
+            margin-top: 12.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+       .text{
+            text-decoration: none;
+            position: absolute;
+            z-index: 999;
+            margin-top: 28.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 350;
+            left: 50%;
+            transform: translate(-50%, -50%);
+       }
+        
+        .QA1{
+            position: absolute;
+            z-index: 999;
+            margin-top: 36.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .QA2{
+            position: absolute;
+            z-index: 999;
+            margin-top: 42.4vh;
+            color: #67645E;
+            font-family: "Montserrat";
+            font-size: 3vh;
+            font-weight: 300;
+            width: 75vw;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.20vh solid #67645E;
+            border-radius: 50vh;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    <div class="elements">
+        <div class="logo">Insight</div>
+    </div> 
+
+    <div class="plate">
+        
+        <div class="text">
+            <a >Кто вы?</a>
+        </div>
+        <!-- Вопрос и закидывание в базу данных состояния профиял -->
+        <div class="QA1" onclick="location.href='registration.html'">
+            <a>Партнер</a>
+        </div>
+        <div class="QA2" onclick="location.href='registration.html'">
+            <a>Клиент</a>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
