@@ -126,6 +126,31 @@
             margin-top: 2vh;
             font-family: Montserrat;
         }
+
+        .lessonsmoreconfirmmodal{
+            margin-left: 3vw;
+            display: flex;
+            width: 85vw;
+            padding: 2vw 0vh;
+            background-color: #D9674F;
+            color: #ffffff;
+            border-radius: 50vw;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            font-size: 5vw;
+            margin-top: 2vh;
+            font-family: Montserrat;
+        }
+        .lessonsmoreconfirmtxtmodal{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            font-weight: 400;
+            
+
+        }
+
         .lessonsmoreconfirmtxt{
             display: flex;
             text-align: center;
@@ -141,6 +166,46 @@
             font-weight: 400;
             right: 5vw;
 
+        }
+        .lessonsmoreconfirmpointsmodal{
+            display: flex;
+            font-size: 3vh;
+            align-items: center;
+            font-weight: 400;
+            right: 5vw;
+
+        }
+
+
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 0.1vh solid #1D1C1A;
+            border-radius: 200vh;
+        }
+        .button {
+            font-weight: 600;
+            padding: 0.75vh;
+            color: #1D1C1A;
+            border: none;
+            border-radius: 200vh;
+            cursor: pointer;
+            width: 30px;
+            text-align: center;
+            font-size: 3vh;
+        }
+        .input {
+            border: none;
+            border-radius: 1vh;
+            width: 40px;
+            height: 4.4vh;
+            text-align: center;
+            
+            margin: 0 5px;
+            font-size: 2.5vh;
+            font-family: Montserrat;
+            font-weight: 400;
         }
         
        
@@ -243,14 +308,15 @@
                 height: 100%;
                 overflow: auto;
                 background-color: rgb(0,0,0,0.4);
+                overflow-y: hidden;
             }
             .modal-content {
                 background-color: #fff;
-                margin-top: 60vh;
+                margin-top: 45vh;
                 padding: 20px;
                 border: 1px solid #888;
-                height: 35vh;
-                
+                height: 50.5vh;
+                justify-content: center;
             }
             .close {
                 color: #aaa;
@@ -314,15 +380,12 @@
         
         <button class="lessonsmoreconfirm" id="myBtn">
             <div class="lessonsmoreconfirmtxt">Забронировать</div>
-            <div class="lessonsmoreconfirmpoints">15000 баллов</p></div>
+            <div class="lessonsmoreconfirmpoints">150 баллов</p></div>
         </button>
-        <button class="lessonsmoreconfirm" id="myBtn" style="bottom: 6vh;">
+        <!-- <button class="lessonsmoreconfirm" id="myBtn" style="bottom: 6vh;">
             <div class="lessonsmoreconfirmtxt">Оплатить разово</div>
             <div class="lessonsmoreconfirmpoints">15000 баллов</p></div>
-        </button>
-        <br>
-        <br>
-        <br>
+        </button> -->
         <br>
         <br>
         <br>
@@ -331,7 +394,10 @@
         <br>
         <br>
         
+            
     </div>
+
+    
 
     <div class="footer">
         <a class="et-hero-tab" href="#"><img class="mainimg" src="images/categories/main2.png" >Главная</a>
@@ -340,6 +406,65 @@
         <a class="et-hero-tab" href="#"><img class="mainimg" src="../images/categories/profile2.png" >Профиль</a>
     </div>
 
+
+    <!-- модалка -->
+
+
+
+    <div id="myModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close">×</span>
+          
+
+          <div class="lessonsmore">
+          <div>
+              <div class="lessonsmorename">Балет(Классика)</div>
+              <div class="lessonsmorestudio">La Perla Mind&amp;Body</div>
+          </div>
+      </div>
+
+        <div class="aboutlesson">
+            <div class="leftplace">
+                15/35
+                <a style="font-size: 5vw;">Мест доступно</a>
+
+            </div>
+
+            <div class="rightplace">
+                <div style="display:flex;font-size: 5vw;">31 Мая</div>
+                с 09:00 - до 10:00
+
+            
+            </div>
+        </div>
+          
+        
+        <!-- рабочая версия без  -->
+        <div class="aboutlesson">
+            <div class="leftplace">
+                <div class="quantity-selector">
+                    <div class="button" id="decrease">-</div>
+                    <input type="number" id="quantity" class="input" value="1" min="1" max="5" readonly>
+                    <div class="button" id="increase">+</div>
+                </div> 
+            </div>
+
+            <div class="rightplace">
+                <div class="lessonsmoreconfirmpointsmodal" id="totalPoints">Баллов: 15</div>
+                
+            
+            </div>
+        </div>
+
+
+          <button class="lessonsmoreconfirmmodal" id="myBtn" style="bottom: 0vh;">
+            <div class="lessonsmoreconfirmtxtmodal">Оплатить абонементом</div>
+        </button>
+        <!-- <button class="lessonsmoreconfirmmodal" id="myBtn" style="bottom: 0vh;">
+            <div class="lessonsmoreconfirmtxtmodal">Оплатить картой</div>
+        </button> -->
+        </div>
+    </div>
 </body>
 
 
@@ -364,5 +489,43 @@
         modal.style.display = "none";
       }
     }
+
+
+
+    const quantityInput = document.getElementById('quantity');
+        const increaseButton = document.getElementById('increase');
+        const decreaseButton = document.getElementById('decrease');
+        const pointsDisplay = document.querySelector('.lessonsmoreconfirmpointsmodal');
+        const totalPointsDisplay = document.getElementById('totalPoints');
+
+        const pointsPerItem = 150; // Количество баллов за занятие тут указано
+
+        function updateTotalPoints() {
+            const quantity = parseInt(quantityInput.value);
+            const totalPoints = pointsPerItem * quantity;
+            totalPointsDisplay.textContent = `Баллов: ${totalPoints}`;
+        }
+
+        increaseButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < 5) {
+                quantityInput.value = currentValue + 1;
+                updateTotalPoints();
+            }
+        });
+
+        decreaseButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+                updateTotalPoints();
+            }
+        });
+
+        // Инициализация отображения баллов
+        updateTotalPoints();
+
+
+    
     </script>
 </html>
