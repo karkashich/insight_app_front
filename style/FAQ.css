@@ -1,0 +1,30 @@
+body::-webkit-scrollbar {
+    display: none;
+  }
+body{
+
+    background-color: #EEE9E7;
+    margin: 0px;
+    width: 100%;
+    color: #1D1C1A;
+    
+}
+.content{
+    z-index: 950 ;
+    position: absolute;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+    width: 89.7vw;
+    height: 80vh;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Montserrat';
+    font-size: 3.5vw;
+}
+.back_btn{
+    position: absolute;
+    z-index: 999;
+    margin-top: 7.5vh;
+    left: 7.5vw;
+}

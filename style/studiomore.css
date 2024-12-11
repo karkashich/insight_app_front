@@ -1,0 +1,235 @@
+body::-webkit-scrollbar {
+    display: none;
+  }
+body{
+
+    background-color: #EEE9E7;
+    margin: 0px;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+
+.content{
+    z-index: 950 ;
+    position: absolute;
+    margin-top: 5vh;
+    justify-content: center;
+    align-items: center;
+    width: 89.7vw;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Montserrat';
+
+}
+.lessonsmore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.lessonsmorename{
+    font-size: 6.5vw;
+    font-weight: 300;
+
+    align-items: center;
+    justify-content: center;
+}
+.lessonsmorestudio{
+    justify-content: center;
+    display: flex;
+    font-size: 3vw;
+    align-items: center;
+    margin-top: 0.5vh;
+}
+
+.lessonsmoreinfo{
+    display: inline-flex;
+    margin-top: 2vh;
+
+}
+
+
+
+
+.lessonsmoresuggestion{
+    z-index: 2;
+    align-items: center;
+    display: flex;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color: #EEE9E7;
+    border-radius: 5vw;
+    border: #1D1C1A solid 0.4vw;
+    font-size: 5vw;
+    
+}
+.lessonsmoresuggestionimg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0; 
+    border-radius: 4.5vw;
+    display: block;
+    height: 8vh;
+    width: 18vw;
+    background-color: #1D1C1A;
+}
+.lessonsmoresuggestiontext{
+    
+    position: absolute;
+    left: 25vw;
+
+}
+p{
+    margin: auto;
+}
+
+.lessonsmoresuggestioncost{
+    position: absolute;
+    right: 3vw;
+
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.lessonsmoresuggestionstudio{
+    margin: 1vh 2.5vw;
+    padding: 0;
+    font-size: 5vw;
+    color: #1D1C1A;   
+}
+
+
+.lessonsmoreconfirm{
+    display: flex;
+    position: absolute;
+    width: 89.7vw;
+    padding: 2vw 0vh;
+    background-color: #D9674F;
+    color: #ffffff;
+    border-radius: 50vw;
+    align-items: center;
+
+    font-size: 5vw;
+    bottom: 0;
+}
+.lessonsmoreconfirmtxt{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 400;
+    margin-left: 5vw;
+
+}
+.lessonsmoreconfirmpoints{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    font-weight: 400;
+    right: 5vw;
+
+}
+
+
+
+
+.back_btn{
+    position: absolute;
+    z-index: 1000;
+    margin-top: 5vh;
+    left: 7.5vw;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 13vh;
+
+    background-color: #EEE9E7;
+    z-index: 999;
+    font-size: 3vw;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    backdrop-filter: blur(4px); 
+}
+a {
+    text-decoration: none;
+}
+.et-hero-tab {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #67645E;
+    margin-top: 4vh;
+    
+}
+.mainimg{
+
+    position: absolute;
+    height: 4vh;
+    margin-top: -7vh;
+    
+}
+.noopasity_line{
+    z-index: 999;
+    height: 5vh;
+    width: 100%;
+    background-color: #EEE9E7;
+}
+.opasity_line{
+    z-index: 999;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    margin-top: -0.05vh;
+    background:linear-gradient(#EEE9E7, #FFF0);
+}
+
+
+.carouselimgt {
+    width: 100%;
+    display: block;	
+    margin: 0;	
+}
+.carousel-ctnr {
+    width: 100%;
+    margin:  auto 0 auto;
+    height: 31vh;
+   
+    
+}
+span {
+    font-size: 5em;
+    opacity: 0;
+    color: #e0816e;
+    border: #EEE9E7;
+}
+span:hover {
+    cursor: pointer;
+}
+.carouselimg {
+    display: none;
+    
+    width: 100%;
+    object-fit: cover;
+}
+.carouselimg:first-of-type {
+    display: block;
+}
+.left-arrow, .right-arrow {
+    position: absolute;
+    top: 12vh;
+    padding: 2%;
+}
+.right-arrow {
+    right: 0;
+}

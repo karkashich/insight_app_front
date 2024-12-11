@@ -1,0 +1,258 @@
+body::-webkit-scrollbar {
+    display: none;
+  }
+body{
+
+    background-color: #fff;
+    margin: 0px;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+
+.content{
+    z-index: 950 ;
+    position: absolute;
+    margin-top: 7vh;
+    justify-content: center;
+    align-items: center;
+    width: 89.7vw;
+    height: 80vh;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Montserrat';
+
+}
+.lessonsmore{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.lessonsmorename{
+    display: flex;
+    font-size: 6.5vw;
+    font-weight: 300;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.lessonsmorestudio{
+    justify-content: center;
+    display: flex;
+    font-size: 3vw;
+    align-items: center;
+    margin-top: 0.5vh;
+}
+
+.lessonsmoreinfo{
+    display: inline-flex;
+    margin-top: 2vh;
+
+}
+
+
+
+
+.lessonsmoresuggestion{
+    z-index: 2;
+    align-items: center;
+    display: flex;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color: #fff;
+    border-radius: 5vw;
+    border: #1D1C1A solid 0.4vw;
+    font-size: 5vw;
+    
+}
+.lessonsmoresuggestionimg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0; 
+    border-radius: 4.5vw;
+    display: block;
+    height: 8vh;
+    width: 18vw;
+    background-color: #1D1C1A;
+}
+.lessonsmoresuggestiontext{
+    
+    position: absolute;
+    left: 25vw;
+
+}
+.lessonsmoresuggestioncost{
+    position: absolute;
+    right: 3vw;
+
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.lessonsmoresuggestionstudio{
+    margin: 1vh 2.5vw;
+    padding: 0;
+    font-size: 5vw;
+    color: #1D1C1A;   
+}
+
+
+.lessonsmoreconfirm{
+    display: flex;
+    width: 89.7vw;
+    padding: 2vw 0vh;
+    background-color: #D9674F;
+    color: #ffffff;
+    border-radius: 50vw;
+    align-items: center;
+    border: none;
+    font-size: 5vw;
+    margin-top: 2vh;
+    font-family: Montserrat;
+}
+.lessonsmoreconfirmtxt{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 400;
+    margin-left: 5vw;
+
+}
+.lessonsmoreconfirmpoints{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    font-weight: 400;
+    right: 5vw;
+
+}
+
+
+
+
+.back_btn{
+    position: absolute;
+    z-index: 999;
+    margin-top: 7.5vh;
+    left: 7.5vw;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 13vh;
+    background-color: #fff;
+    z-index: 999;
+    font-size: 3vw;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    backdrop-filter: blur(4px); 
+}
+a {
+    text-decoration: none;
+}
+.et-hero-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #67645E;
+    margin-top: 4vh;
+}
+.mainimg{
+    position: absolute;
+    height: 4vh;
+    margin-top: -7vh;
+    
+}
+
+
+
+.aboutlesson{
+    
+    margin-top: 3vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 87.9vw;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 3vh;
+    justify-content: center;
+    }
+
+    
+    
+    
+    .leftplace{
+        flex-direction: column;
+        display: flex;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        color: #7B8F74;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2vh;
+        
+        }    
+    
+    /* 2/3 от ширины контейнера */
+    .rightplace {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        font-size: 2.2vh;
+        align-items: center;
+    }
+
+
+
+
+
+    .modal {
+        display: none;
+        position: fixed;
+        font-family: Montserrat;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0,0.4);
+    }
+    .modal-content {
+        background-color: #fff;
+        margin-top: 60vh;
+        padding: 20px;
+        border: 1px solid #888;
+        height: 35vh;
+        
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
