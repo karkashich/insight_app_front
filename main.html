@@ -11,11 +11,25 @@
           }
         body{
 
-            background-color: #EEE9E7;
+            background-color: #fff;
             margin: 0px;
             width: 100%;
             color: #1D1C1A;
             
+        }
+        .notificationblock{
+            width: 89.7vw;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+        .topblocknotiffav{
+            display: flex;
+        justify-content: center;
+        }
+        .notificationblockimg{
+            
+            height: 3.75vh;
         }
         .access{
             box-sizing: border-box;
@@ -32,7 +46,12 @@
             border-radius: 2.3vh;
             padding: 0px;
         }
-        .codeblock{
+        .codeblock1{
+            justify-content: center;
+            display: flex;
+            margin-top: 0.75vh;
+        }
+        .codeblock2{
             justify-content: center;
             display: flex;
             margin-top: 2vh;
@@ -84,7 +103,7 @@
             position: flex;
             height: 33vh;
             width: 89.7vw;
-            margin-top: 1.8vh;
+            margin-top: 0vh;
             background-color: #505050;
 
             justify-content: center;
@@ -154,7 +173,7 @@
             width: 100%;
             height: 13vh;
         
-            background-color: #EEE9E7;
+            background-color: #fff;
             z-index: 999;
             font-size: 3vw;
             font-family: 'Montserrat';
@@ -243,8 +262,17 @@
 
 <body>
     <br>
-    
-    <div class="codeblock">
+    <div class="topbloknotiffav">
+        <div class="notificationblock">
+            <div class="topblocknotif left" onclick="location.href='#'">
+                <img class="notificationblockimg" src="images/favorite.png">
+            </div>
+            <div class="topblocknotif right" onclick="location.href='#'">
+                <img class="notificationblockimg" src="images/notiftrue.png">
+            </div>
+        </div>
+    </div>    
+    <div class="codeblock1">
         <div class="topblock">
             <!-- <video autoplay="" loop="" muted="" playsinline="">
                 <source src="/build/assets/video-c83a61ef.mp4" type="video/mp4">
@@ -279,7 +307,7 @@
         </div>
     </div>
 
-    <div class="codeblock">
+    <div class="codeblock2">
         <div class="access" onclick="location.href='#'">
             <div class="txtblock">
                 <a class="greentxt">

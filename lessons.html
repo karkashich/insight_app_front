@@ -11,7 +11,7 @@
           }
         body{
 
-            background-color: #EEE9E7;
+            background-color: #fff;
             margin: 0px;
             width: 100%;
             align-items: center;
@@ -33,7 +33,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            color: #EEE9E7;
+            color: #fff;
             font-family: 'Montserrat';
             font-weight: 500;
             font-size: 2.1vh;
@@ -46,7 +46,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-47%, -50%);
-            color: #EEE9E7;
+            color: #fff;
             font-family: 'Montserrat';
             font-size: 1.8vh;
             font-weight: 500;
@@ -59,7 +59,7 @@
             
             height: 21.5vh;
             width: 100vw;
-            background-color: #EEE9E7;
+            background-color: #fff;
             margin-top: -2.7vh;
             z-index: 998;
         }
@@ -67,11 +67,11 @@
             position: absolute;
             margin-top: 17.5vh;
             margin-left: 3.1vw;
-            background-color: #EEE9E7;
+            background-color: #fff;
 
         }
         .filters{
-            background-color: #EEE9E7;
+            background-color: #fff;
             display: inline-flex;
             flex-direction: column;
             margin-left: 2vw;
@@ -130,8 +130,19 @@
             font-family: "Montserrat";
             font-weight: 300;
             color: #67645E;
-            padding: 1vh 3vw 0vh 3vw;
-        }  
+            
+        } 
+        .lessoncardimg{
+            height: 18vh;
+            width: 89.3vw;
+            object-fit: cover;
+            outline: #67645E solid 0.2vw;
+            border-radius: 2.4vh;
+            margin: 0;
+        }
+        .lessoncardinfo{
+            padding: 0vh 3vw 0vh 3vw;
+        }
         .namelesson{
             position: absolute;
             margin-top: 0;
@@ -181,7 +192,7 @@
             width: 100%;
             height: 9.8vh;
         
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgb(255, 255, 255);
             z-index: 999;
             font-size: 3vw;
             font-family: 'Montserrat';
@@ -240,16 +251,43 @@
     <div class="content">
 
         <div class="lessoncard" onclick="location.href='#'"> 
-            <p class="namelesson">Балет(классика)</p>
-            <p class="timelesson">9:00 - 10:00</p>
-            <p class="studiolesson">La Perla Mind&Body</p>
-            <div class="cardbtm">
-                <p class="pointlesson">Осталось мест: 5</p>
-                <p class="costlesson">12 баллов</p>
+            <img src="images/studio.jpg" class="lessoncardimg">
+            <div class="lessoncardinfo">
+                <p class="namelesson">Балет(классика)</p>
+                <p class="timelesson">9:00 - 10:00</p>
+                <p class="studiolesson">La Perla Mind&Body</p>
+                <div class="cardbtm">
+                    <p class="pointlesson">Осталось мест: 5</p>
+                    <p class="costlesson">12 баллов</p>
+                </div>
             </div>
         </div>    
 
+        <div class="lessoncard" onclick="location.href='#'"> 
+            <img src="images/studio.jpg" class="lessoncardimg">
+            <div class="lessoncardinfo">
+                <p class="namelesson">Балет(классика)</p>
+                <p class="timelesson">9:00 - 10:00</p>
+                <p class="studiolesson">La Perla Mind&Body</p>
+                <div class="cardbtm">
+                    <p class="pointlesson">Осталось мест: 5</p>
+                    <p class="costlesson">12 баллов</p>
+                </div>
+            </div>
+        </div> 
         
+        <div class="lessoncard" onclick="location.href='#'"> 
+            <img src="images/studio.jpg" class="lessoncardimg">
+            <div class="lessoncardinfo">
+                <p class="namelesson">Балет(классика)</p>
+                <p class="timelesson">9:00 - 10:00</p>
+                <p class="studiolesson">La Perla Mind&Body</p>
+                <div class="cardbtm">
+                    <p class="pointlesson">Осталось мест: 5</p>
+                    <p class="costlesson">12 баллов</p>
+                </div>
+            </div>
+        </div> 
 
         
 

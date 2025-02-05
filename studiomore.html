@@ -14,19 +14,49 @@
           }
         body{
 
-            background-color: #EEE9E7;
+            background-color: #ffffff;
             margin: 0px;
             width: 100%;
             align-items: center;
         }
-        
+        .btnpanel{
+            position: relative;
+            height: 15vh;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+
+        }
+        .btnsline{
+            z-index: 999;
+            margin-top: 6vh;
+            display: flex;
+            width: 89.7vw;
+        }
+        .rightbtns{
+            z-index: 999;
+            right: 0;
+            display: flex;
+            margin-left: auto;
+            gap: 3.5vw;
+        }
+        .back_btn{
+            z-index: 999;
+            height: 5vh; 
+        }
+        .lessonsmoreimg{
+            margin-top: -14vh;
+            z-index: 1;
+        }
 
 
 
         .content{
             z-index: 950 ;
             position: absolute;
-            margin-top: 5vh;
+            margin-top: 2vh;
             justify-content: center;
             align-items: center;
             width: 89.7vw;
@@ -71,7 +101,7 @@
             display: flex;
             height: 8vh;
             margin-top: 1vh;
-            background-color: #EEE9E7;
+            background-color: #fff;
             border-radius: 5vw;
             border: #1D1C1A solid 0.4vw;
             font-size: 5vw;
@@ -149,12 +179,7 @@
        
 
 
-        .back_btn{
-            position: absolute;
-            z-index: 1000;
-            margin-top: 5vh;
-            left: 7.5vw;
-        }
+        
         .footer {
             display: flex;
             flex-direction: row;
@@ -163,7 +188,7 @@
             width: 100%;
             height: 13vh;
         
-            background-color: #EEE9E7;
+            background-color: #fff;
             z-index: 999;
             font-size: 3vw;
             font-family: 'Montserrat';
@@ -190,20 +215,7 @@
             margin-top: -7vh;
             
         }
-        .noopasity_line{
-            z-index: 999;
-            height: 5vh;
-            width: 100%;
-            background-color: #EEE9E7;
-        }
-        .opasity_line{
-            z-index: 999;
-            height: 10vh;
-            width: 100vw;
-            position: absolute;
-            margin-top: -0.05vh;
-            background:linear-gradient(#EEE9E7, #FFF0);
-        }
+        
 
 
         .carouselimgt {
@@ -215,14 +227,13 @@
 			width: 100%;
 			margin:  auto 0 auto;
 			height: 31vh;
-           
-			
+			margin-top: -10vh;
 		}
 		span {
 			font-size: 5em;
 			opacity: 0;
 			color: #e0816e;
-            border: #EEE9E7;
+            border: #fff;
 		}
 		span:hover {
 			cursor: pointer;
@@ -250,18 +261,31 @@
 
 <body>
        
-    <div class="back_btn" onclick="location.href='#'">
-        <img src="images/back_btn.svg" alt="back">
+    <div class="btnpanel">
+        <div class="btnsline">
+            <div class="back_btn" onclick="location.href='#'">
+                <img src="images/back_btn.svg" alt="back" style="height: 3.6vh;">
+            </div>
+
+            <div class="rightbtns">
+                <div class="rigth_btn" onclick="toggleImage(this)">
+                    <img src="images/favoritefalse.png" alt="back" style="height: 3.6vh;" id="favoriteImage">
+                </div>
+                <!-- <div class="right_btn" onclick="location.href='#'" id="shareBtn" >
+                    <img src="images/share.png" alt="back" style="height: 3.6vh;">
+                </div> -->
+            </div>
+        </div>
     </div>
+
     <div class="studiophotos">
         
     </div>
-    <div class="noopasity_line"></div>
-    <div class="opasity_line"></div>
+    
     <div class="carousel-ctnr">
 		<span class="left-arrow">&lt;</span>
-		<img  class='carouselimg' src="images/photo1.jpg">
-		<img class='carouselimg' src="images/photo2.jpg">
+		<img  class='carouselimg' src="images/studio.jpg">
+		<img class='carouselimg' src="images/categories/dance.png">
 		<img class='carouselimg'  src="images/photo3.jpg">	
 		<img class='carouselimg'  src="images/photo4.jpg">
 		<span class="right-arrow">&gt;</span>
@@ -359,6 +383,16 @@
             }
             imgs.eq(index).show();
         });
-    })();	
+    })()
+
+    
+    function toggleImage(element) {
+        const img = element.querySelector('img');
+        if (img.src.includes('favoritefalse.png')) {
+            img.src = 'images/favorite.png'; // Укажите путь к другому изображению
+        } else {
+            img.src = 'images/favoritefalse.png'; // Возврат к исходному изображению
+        }}
+    ;	
 </script>
 </html>
